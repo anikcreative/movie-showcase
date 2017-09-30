@@ -1,37 +1,11 @@
-## Welcome to GitHub Pages
+# movie-showcase
+### A Python-generated showcase that plays trailer videos for a set of movies. A project for the Udacity Full Stack Web Development Nanodegree.
 
-You can use the [editor on GitHub](https://github.com/anikcreative/movie-showcase/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### Important information
+*entertainment_center.py* imports the *openpyxl* library, an external Python library (which can be found at https://openpyxl.readthedocs.io/en/default/) in order to read data from the cells within the *moviesdb.xlsx* spreadsheet.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### How it works
+*entertainment_center.py* reads from an excel spreadsheet (*assets/moviesdb.xlsx*), aggregating a list of "Movie" objects (using the definition of the Movie object in *media.py*). This list of Movie objects, each object containing an attribute relating to the movie's title, director, rating, synopsis, and so on is then used to compile and write an HTML file, where each Movie object is represented in tile-like fashion inside a responsive page.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anikcreative/movie-showcase/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Image assets
+All box-art image assets are stored in the */assets/img* directory.
