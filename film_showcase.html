@@ -1,0 +1,250 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>Film Showcase</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="./assets/theme/override.css">
+    <link rel="stylesheet" href="./assets/theme/style.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Movie Showcase</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-sm-12 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="ej3ioOneTy8" data-toggle="modal" data-target="#trailer">
+    <img src="assets/img/the_martian.jpg">
+    <h2>The Martian <em> (2015) </em></h2>
+    <p>
+        Rating: PG-13<br/>
+        Audience rating: 4 / 5<br/>
+        Directed by: Ridley Scott<br/>
+    </p>
+    <div class="movie-tile-overlay">
+        <p class="movie-synopsis">
+            An astronaut is stranded on Mars after an accident, and struggles to stay alive long enough to be rescued.
+        </p>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="wZdpNglLbt8" data-toggle="modal" data-target="#trailer">
+    <img src="assets/img/finding_nemo.jpg">
+    <h2>Finding Nemo <em> (2003) </em></h2>
+    <p>
+        Rating: G<br/>
+        Audience rating: 4.1 / 5<br/>
+        Directed by: Andrew Stanton, Lee Unkrich<br/>
+    </p>
+    <div class="movie-tile-overlay">
+        <p class="movie-synopsis">
+            After his son is captured in the Great Barrier Reef, a timid clownfish sets out on a journey to bring him home.
+        </p>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="frdj1zb9sMY" data-toggle="modal" data-target="#trailer">
+    <img src="assets/img/rogue_one.jpg">
+    <h2>Rogue One <em> (2016) </em></h2>
+    <p>
+        Rating: PG-13<br/>
+        Audience rating: 3.9 / 5<br/>
+        Directed by: Gareth Edwards<br/>
+    </p>
+    <div class="movie-tile-overlay">
+        <p class="movie-synopsis">
+            The Rebel Alliance makes a risky move to steal the plans for the Death Star, setting up the epic saga to follow.
+        </p>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="tFMo3UJ4B4g" data-toggle="modal" data-target="#trailer">
+    <img src="assets/img/arrival.jpg">
+    <h2>Arrival <em> (2016) </em></h2>
+    <p>
+        Rating: PG-13<br/>
+        Audience rating: 4.3 / 5<br/>
+        Directed by: Dennis Villeneuve<br/>
+    </p>
+    <div class="movie-tile-overlay">
+        <p class="movie-synopsis">
+            When twelve mysterious spacecraft appear around the world, a linguistics professor is tasked with interpreting the language of the apparent alien visitors.
+        </p>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="7BWWWQzTpNU" data-toggle="modal" data-target="#trailer">
+    <img src="assets/img/passengers.jpg">
+    <h2>Passengers <em> (2016) </em></h2>
+    <p>
+        Rating: PG-13<br/>
+        Audience rating: 3.4 / 5<br/>
+        Directed by: Morten Tlydum<br/>
+    </p>
+    <div class="movie-tile-overlay">
+        <p class="movie-synopsis">
+            A spacecraft traveling to a distant colony planet and transporting thousands of people has a malfunction in its sleep chambers. As a result, two passengers are awakened 90 years early.
+        </p>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="hEJnMQG9ev8" data-toggle="modal" data-target="#trailer">
+    <img src="assets/img/mad_max_fury_road.jpg">
+    <h2>Mad Max: Fury Road <em> (2015) </em></h2>
+    <p>
+        Rating: R<br/>
+        Audience rating: 4.1 / 5<br/>
+        Directed by: George Miller<br/>
+    </p>
+    <div class="movie-tile-overlay">
+        <p class="movie-synopsis">
+            A woman rebels against a tyrannical ruler in postapocalyptic Australia in search for her home-land with the help of a group of female prisoners, a psychotic worshipper, and a drifter named Max.
+        </p>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="2LqzF5WauAw" data-toggle="modal" data-target="#trailer">
+    <img src="assets/img/interstellar.jpg">
+    <h2>Interstellar <em> (2014) </em></h2>
+    <p>
+        Rating: PG-13<br/>
+        Audience rating: 4.3 / 5<br/>
+        Directed by: Cristopher Nolan<br/>
+    </p>
+    <div class="movie-tile-overlay">
+        <p class="movie-synopsis">
+            A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival in a post-apocalyptic future.
+        </p>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="G1jG8HUY4zI" data-toggle="modal" data-target="#trailer">
+    <img src="assets/img/grand_budapest_hotel.jpg">
+    <h2>Grand Budapest Hotel <em> (2014) </em></h2>
+    <p>
+        Rating: R<br/>
+        Audience rating: 4.1 / 5<br/>
+        Directed by: Wes Anderson<br/>
+    </p>
+    <div class="movie-tile-overlay">
+        <p class="movie-synopsis">
+            The adventures of Gustave H, a legendary concierge at a famous hotel from the fictional Republic of Zubrowka between the first and second World Wars, and Zero Moustafa, the lobby boy who becomes his most trusted friend.
+        </p>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="OiTiKOy59o4" data-toggle="modal" data-target="#trailer">
+    <img src="assets/img/gravity.jpg">
+    <h2>Gravity <em> (2013) </em></h2>
+    <p>
+        Rating: PG-13<br/>
+        Audience rating: 3.9 / 5<br/>
+        Directed by: Alfonso Cuaron<br/>
+    </p>
+    <div class="movie-tile-overlay">
+        <p class="movie-synopsis">
+            Two astronauts work together to survive after an accident which leaves them alone in space.
+        </p>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="2iQuhsmtfHw" data-toggle="modal" data-target="#trailer">
+    <img src="assets/img/looper.jpg">
+    <h2>Looper <em> (2012) </em></h2>
+    <p>
+        Rating: R<br/>
+        Audience rating: 3.7 / 5<br/>
+        Directed by: Rian Johnson<br/>
+    </p>
+    <div class="movie-tile-overlay">
+        <p class="movie-synopsis">
+            In 2074, when the mob wants to get rid of someone, the target is sent into the past, where a hired gun awaits - someone like Joe - who one day learns the mob wants to 'close the loop' by sending back Joe's future self for assassination.
+        </p>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="eUdM9vrCbow" data-toggle="modal" data-target="#trailer">
+    <img src="assets/img/django_unchained.jpg">
+    <h2>Django Unchained <em> (2012) </em></h2>
+    <p>
+        Rating: R<br/>
+        Audience rating: 4.2 / 5<br/>
+        Directed by: Quentin Tarantino<br/>
+    </p>
+    <div class="movie-tile-overlay">
+        <p class="movie-synopsis">
+            With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.
+        </p>
+    </div>
+</div>
+
+<div class="col-sm-12 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="F4gJsKZvqE4" data-toggle="modal" data-target="#trailer">
+    <img src="assets/img/bourne_ultimatum.jpg">
+    <h2>The Bourne Ultimatum <em> (2007) </em></h2>
+    <p>
+        Rating: PG-13<br/>
+        Audience rating: 4.1 / 5<br/>
+        Directed by: Paul Greengrass<br/>
+    </p>
+    <div class="movie-tile-overlay">
+        <p class="movie-synopsis">
+            Jason Bourne dodges a ruthless CIA official and his agents from a new assassination program while searching for the origins of his life as a trained killer.
+        </p>
+    </div>
+</div>
+
+    </div>
+  </body>
+</html>

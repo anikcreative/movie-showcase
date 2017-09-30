@@ -1,0 +1,52 @@
+/*
+  Dark background:    #29293A ("gunmetal")
+  Hover on dark bg:   #333745 ("onyx")
+  Light text:         #F7F4F3 ("white smoke")
+  Link/selection:     #F24333 ("vermillion")
+  Highlight:          #4D5382 ("purple navy")
+*/
+
+body, .container { background: #29293A !important; }
+.navbar, .navbar-inverse {
+  background: #191926 !important;
+  border-bottom: 1px solid #020233;
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
+  filter: alpha(opacity=95);
+  -moz-opacity: 0.95;
+  -khtml-opacity: 0.95;
+  opacity: 0.95;
+}
+.navbar, .navbar-inverse, .navbar-brand {
+  color: #F7F4F3 !important;
+  font-size: 1em;
+}
+.navbar .container {
+  background: none !important;
+  height: 100%;
+}
+
+a:hover { color: #F24333 !important; }
+
+
+
+.body, .container, .movie-tile {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  color: #F7F4F3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  line-height: 1 !important;
+  margin: 0;
+}
